@@ -26,3 +26,39 @@ Yhteen tauluun kohdistuvien kyselyiden harjoitukset:
 
 9. SELECT co2_budget FROM game WHERE id=1;
     ![image](https://github.com/user-attachments/assets/1a401beb-3a2d-428f-bc98-0ed4e7653c83)
+
+
+Where-osan liitosehto harjoitukset
+
+1. SELECT country.name as "country name", airport.name as "airport name" FROM country, airport WHERE country.name='Iceland' and airport.iso_country = country.iso_country;
+   ![image](https://github.com/user-attachments/assets/c3194f4a-ac1a-4558-8515-8585d8e48cee)
+
+2. SELECT name as "airport name" FROM airport WHERE iso_country='FR' and type='large_airport';
+   ![image](https://github.com/user-attachments/assets/3007b9f6-9ab8-4d94-b1c2-84b489fb338b)
+
+3. SELECT country.name as country_name, airport.name as airport_name FROM country, airport WHERE country.continent='AN' and airport.iso_country = country.iso_country;
+   ![image](https://github.com/user-attachments/assets/2f5caa33-bf6b-41d5-b8f7-f41747446f4e)
+
+4. SELECT elevation_ft FROM airport, game WHERE game.screen_name='Heini' and airport.ident=game.location;
+   ![image](https://github.com/user-attachments/assets/f3cb6c3f-0c4d-4b62-b329-620631a6149e)
+
+5. SELECT elevation_ft * 0.3048 as elevation_m FROM airport, game WHERE game.screen_name='Heini' and airport.id
+ent=game.location;
+   ![image](https://github.com/user-attachments/assets/5475c6a9-e74c-44dd-9556-5fd4cdc495c2)
+
+6. SELECT name FROM airport, game WHERE airport.ident = game.location and game.screen_name = 'Ilkka';
+   ![image](https://github.com/user-attachments/assets/395a5ea4-60a6-4f72-b394-38e1c1b71376)
+
+7. SELECT country.name FROM country, airport, game WHERE airport.ident = game.location and game.scre
+en_name = 'Ilkka' and country.iso_country=airport.iso_country;
+   ![image](https://github.com/user-attachments/assets/14602b54-b8ac-4570-890c-3b7d7bde8088)
+
+8. SELECT goal.name FROM goal, game, goal_reached WHERE game.screen_name='Heini' and goal_reached.goal_id=goal.id and goal_reached.game_id=game.id;
+   ![image](https://github.com/user-attachments/assets/381a0512-d956-4fbe-ac23-db3fe1be8c71)
+
+9. SELECT airport.name FROM airport, goal_reached, game, goal WHERE game.screen_name='Ilkka' and goal.name='CLOUDS' and goal_reached.goal_id=goal.id and goal_reached.game_id=game.id and airport.ident=game.location;
+    ![image](https://github.com/user-attachments/assets/24d23639-7019-4245-a351-091ed845580c)
+
+10. SELECT country.name FROM country, airport, goal_reached, game, goal WHERE game.screen_name='Ilkka' and goal.
+name='CLOUDS' and goal_reached.goal_id=goal.id and goal_reached.game_id=game.id and airport.ident=game.location and airport.iso_country=country.iso_country;
+   ![image](https://github.com/user-attachments/assets/df285de6-70ac-4164-b613-2fe4e2fda400)
