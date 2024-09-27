@@ -1,3 +1,4 @@
+Relaatiotietokannan peruskäsitteiden tentti
 ![image](https://github.com/user-attachments/assets/64988d3d-660a-4c38-ad8e-b55f18a553e7)
 
 
@@ -149,3 +150,6 @@ Päivityskysely harjoitukset
 3. DELETE FROM goal_reached;
 
 4. DELETE FROM game;
+
+Tietokannan suunnittelu tentti
+![image](https://github.com/user-attachments/assets/36bb41e5-96ba-4b93-af14-01cbf8b0b50f)
