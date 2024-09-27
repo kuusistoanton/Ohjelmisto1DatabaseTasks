@@ -62,3 +62,22 @@ en_name = 'Ilkka' and country.iso_country=airport.iso_country;
 10. SELECT country.name FROM country, airport, goal_reached, game, goal WHERE game.screen_name='Ilkka' and goal.
 name='CLOUDS' and goal_reached.goal_id=goal.id and goal_reached.game_id=game.id and airport.ident=game.location and airport.iso_country=country.iso_country;
    ![image](https://github.com/user-attachments/assets/df285de6-70ac-4164-b613-2fe4e2fda400)
+
+
+Join harjoitukset
+
+1. SELECT country.name as "country name", airport.name as "airport name" FROM airport inner join country on country.iso_country = airport.iso_country WHERE country.name='Finland' and scheduled_service='yes';
+   ![image](https://github.com/user-attachments/assets/bd19a6ec-a5d2-4615-b03c-7e052c9047a6)
+
+2. SELECT screen_name, name FROM game inner join airport on airport.ident = location;
+   ![image](https://github.com/user-attachments/assets/4a64c0b7-50c7-4861-a3df-41071d685ce1)
+
+3. SELECT screen_name, country.name FROM game inner join airport on airport.ident = location
+-> inner join country on country.iso_country = airport.iso_country;
+   ![image](https://github.com/user-attachments/assets/45752aa9-fda4-43a4-838e-afa33d2c845b)
+
+4. SELECT name, screen_name FROM airport left join game on game.location = ident WHERE airport.name like '%Hels%';
+   ![image](https://github.com/user-attachments/assets/958cd1ea-83f8-4733-9796-40881815c6e5)
+
+5. SELECT name, screen_name FROM goal left join goal_reached on goal_reached.goal_id = id left join game on game.id = goal_reached.game_id;
+   ![image](https://github.com/user-attachments/assets/037a24ed-7d2f-4d7a-b944-a06f27691163)
