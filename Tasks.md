@@ -81,3 +81,21 @@ Join harjoitukset
 
 5. SELECT name, screen_name FROM goal left join goal_reached on goal_reached.goal_id = id left join game on game.id = goal_reached.game_id;
    ![image](https://github.com/user-attachments/assets/037a24ed-7d2f-4d7a-b944-a06f27691163)
+
+
+Sisäkysely harjoitukset
+
+1. SELECT name FROM country WHERE iso_country in(SELECT iso_country FROM airport WHERE name like 'Satsuma%');
+   ![image](https://github.com/user-attachments/assets/1213a2b9-cbf7-48ee-90d8-60552ad0fd90)
+
+2. SELECT name FROM airport WHERE iso_country in(SELECT iso_country FROM country WHERE name='Monaco');
+   ![image](https://github.com/user-attachments/assets/32881514-bdcb-446e-8f38-527622e271b1)
+
+3. SELECT screen_name FROM game WHERE id in(SELECT game_id FROM goal_reached WHERE goal_id in(SELECT id FROM goal WHERE name='CLOUDS'));
+   ![image](https://github.com/user-attachments/assets/e5381cae-3d67-4123-9cd6-8c34e6772ad8)
+
+4. SELECT name FROM country WHERE iso_country NOT IN(SELECT iso_country FROM airport);
+   ![image](https://github.com/user-attachments/assets/ec5e4ef1-6bdf-4aca-93db-5043fc2b7754)
+
+5. SELECT name FROM goal WHERE id NOT IN(SELECT goal_id FROM goal_reached WHERE game_id IN(SELECT id FROM game WHERE screen_name='Heini'));
+   ![image](https://github.com/user-attachments/assets/c9b6ecad-d0bd-4273-9edd-c89e95c1e504)
