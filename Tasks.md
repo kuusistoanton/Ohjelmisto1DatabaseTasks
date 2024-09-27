@@ -118,3 +118,18 @@ Koostetieto kyselyt harjoitukset
 
 5. SELECT country.name, count(*) FROM airport inner join country on country.iso_country = airport.iso_country group by airport.iso_country order by count(*)desc limit 50;
    ![image](https://github.com/user-attachments/assets/54217827-1cf2-4d63-9dd3-ba79a37b6039)
+
+6. SELECT country.name FROM airport inner join country on country.iso_country = airport.iso_country group by airport.iso_country having count(*) >= 1000;
+   ![image](https://github.com/user-attachments/assets/806ce136-8e8e-4328-92c3-a1fe4677ac74)
+
+7. SELECT name FROM airport WHERE elevation_ft IN(SELECT max(elevation_ft) FROM airport);
+   ![image](https://github.com/user-attachments/assets/3394a8d3-518b-4f05-9791-2ba28286e227)
+
+8. SELECT name FROM country WHERE iso_country IN(SELECT iso_country FROM airport WHERE elevation_ft IN(SELECT max(elevation_ft) FROM airport));
+   ![image](https://github.com/user-attachments/assets/a9f252a9-ed16-44b5-b36b-5bb63bfdeb4d)
+
+9. SELECT count(*) FROM goal_reached WHERE game_id IN(SELECT id FROM game WHERE screen_name='Vesa');
+    ![image](https://github.com/user-attachments/assets/1e759d1d-6b0a-4ea2-b083-6e0b7b059d90)
+
+10. SELECT name FROM airport WHERE latitude_deg IN(SELECT min(latitude_deg) FROM airport);
+    ![image](https://github.com/user-attachments/assets/88c99974-35ec-4b63-8a17-681c8bf967b1)
