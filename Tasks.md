@@ -133,3 +133,16 @@ Koostetieto kyselyt harjoitukset
 
 10. SELECT name FROM airport WHERE latitude_deg IN(SELECT min(latitude_deg) FROM airport);
     ![image](https://github.com/user-attachments/assets/88c99974-35ec-4b63-8a17-681c8bf967b1)
+
+
+
+Päivityskysely harjoitukset
+
+1. UPDATE game set location = (SELECT ident FROM airport WHERE name ='Nottingham Airport'), co2_consumed = co2_consumed + 500 WHERE screen_name='Vesa';
+   ![image](https://github.com/user-attachments/assets/8fef4bfc-002a-4995-a604-652100709a6b)
+
+2. ![image](https://github.com/user-attachments/assets/0557f972-fe87-4f8a-aed7-87a3ef3e32cb)
+
+3. DELETE FROM goal_reached;
+
+4. DELETE FROM game;
