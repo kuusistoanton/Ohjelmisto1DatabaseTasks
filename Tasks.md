@@ -99,3 +99,22 @@ Sisäkysely harjoitukset
 
 5. SELECT name FROM goal WHERE id NOT IN(SELECT goal_id FROM goal_reached WHERE game_id IN(SELECT id FROM game WHERE screen_name='Heini'));
    ![image](https://github.com/user-attachments/assets/c9b6ecad-d0bd-4273-9edd-c89e95c1e504)
+
+
+
+Koostetieto kyselyt harjoitukset
+
+1. SELECT max(elevation_ft) FROM airport;
+   ![image](https://github.com/user-attachments/assets/604d35ec-0c88-47aa-8969-a4e5df176b1d)
+
+2. SELECT continent, count(*) FROM country group by continent;
+   ![image](https://github.com/user-attachments/assets/faed6e24-b2a4-43f3-92ba-ed3b0764f933)
+
+3. SELECT screen_name, count(*) FROM goal_reached inner join game on game.id = game_id group by game.screen_name;
+   ![image](https://github.com/user-attachments/assets/37db9324-8ce8-492e-bee7-163bf3f9e025)
+
+4. SELECT screen_name FROM game WHERE co2_consumed IN(SELECT min(co2_consumed) FROM game);
+   ![image](https://github.com/user-attachments/assets/e870d044-cbd8-4f20-9106-9ed7901f4572)
+
+5. SELECT country.name, count(*) FROM airport inner join country on country.iso_country = airport.iso_country group by airport.iso_country order by count(*)desc limit 50;
+   ![image](https://github.com/user-attachments/assets/54217827-1cf2-4d63-9dd3-ba79a37b6039)
